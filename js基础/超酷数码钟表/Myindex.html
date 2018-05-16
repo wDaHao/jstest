@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>无标题文档</title>
+    <script type="text/javascript">
+        function toDouble(num){
+            if (num<10)
+                return '0'+num;
+            else
+                return ''+num;
+        }
+        window.onload=function () {
+            var oBtn1=document.getElementById('btn1');
+            var aImg=document.getElementsByTagName('img');
+            var i=0;
+            setInterval(show,1000);
+            show();
+            oBtn1.onclick=function () {
+                var oDate=new Date();
+                var arr=[Math.floor(oDate.getHours()/10),oDate.getHours()%10,Math.floor(oDate.getMinutes()/10),oDate.getMinutes()%10,Math.floor(oDate.getSeconds()/10),oDate.getSeconds()%10];
+                for (i=0;i<aImg.length;i++)
+                {
+                    aImg[i].src='images/'+arr[i]+'.png';
+                }
+            }
+            function show() {
+                var oDate=new Date();
+
+                var arr=[Math.floor(oDate.getHours()/10),oDate.getHours()%10,Math.floor(oDate.getMinutes()/10),oDate.getMinutes()%10,Math.floor(oDate.getSeconds()/10),oDate.getSeconds()%10];
+                for (i=0;i<aImg.length;i++)
+                {
+                    aImg[i].src='images/'+arr[i]+'.png';
+                }
+            };
+            // var oDate=new Date();
+            // var str=oDate.getHours()+'点'+oDate.getMinutes()+'分'+oDate.getSeconds()+'秒';
+            // alert(str);
+        }
+    </script>
+</head>
+<body style="color: #FF9900; background: #669999; font-size: 50px;">
+<input id="btn1" type="button" value="更新时间"/>
+<img src="images/0.png">
+<img src="images/0.png">
+点
+<img src="images/0.png">
+<img src="images/0.png">
+分
+<img src="images/0.png">
+<img src="images/0.png">
+秒
+</body>
+</html>

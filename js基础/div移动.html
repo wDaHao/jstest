@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>div移动</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #CCC;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            var oDiv=document.getElementById('div1');
+            var oBtn1=document.getElementById('btn1');
+            var oBtn2=document.getElementById('btn2');
+            var timer=null;
+            oBtn1.onclick=function () {
+                timer=setInterval(function () {
+                    oDiv.style.left=oDiv.offsetLeft+5+'px';
+                },30);
+                // alert(oDiv.offsetLeft);
+            };
+            oBtn2.onclick=function () {
+                clearInterval(timer);
+            };
+        }
+    </script>
+</head>
+<body>
+<input  id="btn1" type="button" value="向右移动"/>
+<input  id="btn2" type="button" value="停止移动"/>
+<div id="div1">
+
+</div>
+</body>
+</html>

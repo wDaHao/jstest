@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>childNodes和nodeType2</title>
+    <script type="text/javascript">
+        window.onload=function ()
+        {
+            var oUl=document.getElementById('ul1');
+            var i=0;
+            for (i=0;i<oUl.childNodes.length;i++){
+                //文本不能加任何样式
+                // oUl.childNodes[i].style.background='red';
+                if(oUl.childNodes[i].nodeType==1){
+                    oUl.childNodes[i].style.background='red';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+<ul id="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

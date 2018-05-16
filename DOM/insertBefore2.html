@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>removeChild</title>
+    <script type="text/javascript">
+        window.onload=function ()
+        {
+            var aA=document.getElementsByTagName('a');
+            var oUl=document.getElementById('ul1');
+            var i=0;
+            for (i=0;i<aA.length;i++){
+                aA[i].onclick=function () {
+                    oUl.removeChild(this.parentNode);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+<input type="text" id="txt1"/>
+<input type="button" id="btn1" value="创建li"/>
+<ul id="ul1">
+    <li>aaa<a href="javascript:;">删除</a> </li>
+    <li>bbb<a href="javascript:;">删除</a> </li>
+    <li>ccc<a href="javascript:;">删除</a> </li>
+    <li>sss<a href="javascript:;">删除</a> </li>
+    <li>ddd<a href="javascript:;">删除</a> </li>
+</ul>
+</body>
